@@ -1,0 +1,3 @@
+[submodule "src/testcardgen/data/kanji-data-media"]
+	path = src/testcardgen/data/kanji-data-media
+	url = https://github.com/kanjialive/kanji-data-media
