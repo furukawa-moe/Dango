@@ -3,7 +3,7 @@ import os
 import sys
 import tensorflow as tf
 import argparse
-from tensorflow.contrib.training import HParams
+from hparams import HParams
 
 import model
 from encode_bpe import BPEEncoder_ja
@@ -96,7 +96,7 @@ for line in input_f:
     texts.append(sline)
 
 
-config = tf.ConfigProto()
+config = tf.compat.v1.ConfigProto()
 
 if int(args.gpu) >= 0:
     config.gpu_options.allow_growth = True

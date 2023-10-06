@@ -1,3 +1,6 @@
 [submodule "src/testcardgen/data/kanji-data-media"]
 	path = src/testcardgen/data/kanji-data-media
 	url = https://github.com/kanjialive/kanji-data-media
+[submodule "src/testcardgen/gpt2-japanese"]
+	path = src/testcardgen/gpt2-japanese
+	url = https://github.com/tanreinama/gpt2-japanese

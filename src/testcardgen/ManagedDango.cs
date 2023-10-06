@@ -10,11 +10,11 @@ namespace testcardgen
             PythonEngine.Initialize();
         }
 
-        public List<Word> Tokenize(string input)
+        public List<DangoWord> Tokenize(string input)
         {
             if(string.IsNullOrEmpty(input)) { throw new ArgumentNullException("input"); }
 
-            List<Word> tokens = new List<Word>();
+            List<DangoWord> tokens = new List<DangoWord>();
 
             using (Py.GIL())
             {
@@ -24,7 +24,7 @@ namespace testcardgen
 
                 for (int i = 0; i < (int)_.len(words); i++)
                 {
-                    Word word = new Word()
+					DangoWord word = new DangoWord()
                     {
                         PartOfSpeech = words[i].part_of_speech.name,
                         Surface = words[i].surface,
@@ -42,10 +42,10 @@ namespace testcardgen
         }
     }
 
-    public class Word
+    public class DangoWord
     {
         // todo: create an enum for different PartsOfSpeech
-        public Word() { }
+        public DangoWord() { }
         public override string ToString()
         {
             return $"-- Word\nPartOfSpeech {PartOfSpeech}\nSurface {Surface}\nSurfaceReading {SurfaceReading}\nDictionaryForm {DictionaryForm}\nDictionaryFormReading {DictionaryFormReading}";
